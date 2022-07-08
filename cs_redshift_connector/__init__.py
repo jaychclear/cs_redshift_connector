@@ -5,6 +5,8 @@ import os
 configParser = configparser.RawConfigParser()
 if os.getlogin() == 'jaychoudhoury':
     configFilePath = r'C:\Users\jaychoudhoury\creds.ini'
+else:
+    configFilePath = 'creds.ini'
     
 configParser.read(configFilePath)
 
