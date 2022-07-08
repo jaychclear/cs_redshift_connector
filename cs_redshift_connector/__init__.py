@@ -3,12 +3,10 @@ import configparser
 import os
 
 configParser = configparser.RawConfigParser()
-if os.getlogin() == 'jaychoudhoury':
-    configFilePath = r'C:\Users\jaychoudhoury\creds.ini'
-else:
-    configFilePath = 'creds.ini'
+config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'creds.ini')
+
     
-configParser.read(configFilePath)
+configParser.read(config_path)
 
 
 def get_conn(source='prd-gallium-redshift'):
